@@ -1,0 +1,16 @@
+# Agda
+*.agdai
+MAlonzo/
+html/
+
+# Editor backups
+*~
+\#*\#
+*.agda~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local agent / editor state (keep shared .cursor/rules if you commit them)
+.claude/settings.local.json
