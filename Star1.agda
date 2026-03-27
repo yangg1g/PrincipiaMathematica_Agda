@@ -78,23 +78,23 @@ data ⊢_ : Prop → Set where
 
   -- ∗1.2  ⊢ : p ∨ p .⊃. p          Pp
   --       If either p is true or p is true, then p is true.  (Taut)
-  *1·2 : ⊢ (p ∨ p ⊃ p)
+  *1·2 : ⊢ p ∨ p ⊃ p
 
   -- ∗1.3  ⊢ : q .⊃. p ∨ q          Pp
   --       If q is true, then "p or q" is true.  (Add)
-  *1·3 : ⊢ (q ⊃ p ∨ q)
+  *1·3 : ⊢ q ⊃ p ∨ q
 
   -- ∗1.4  ⊢ : p ∨ q .⊃. q ∨ p      Pp
   --       "p or q" implies "q or p."  (Perm)
-  *1·4 : ⊢ (p ∨ q ⊃ q ∨ p)
+  *1·4 : ⊢ p ∨ q ⊃ q ∨ p
 
   -- ∗1.5  ⊢ : p ∨ (q ∨ r) .⊃. q ∨ (p ∨ r)    Pp
   --       Associative principle.  (Assoc)
-  *1·5 : ⊢ (p ∨ (q ∨ r) ⊃ q ∨ (p ∨ r))
+  *1·5 : ⊢ p ∨ (q ∨ r) ⊃ q ∨ (p ∨ r)
 
   -- ∗1.6  ⊢ : q ⊃ r .⊃: p ∨ q .⊃. p ∨ r     Pp
   --       If q implies r, then "p or q" implies "p or r."  (Sum)
-  *1·6 : ⊢ ((q ⊃ r) ⊃ (p ∨ q ⊃ p ∨ r))
+  *1·6 : ⊢ (q ⊃ r) ⊃ (p ∨ q ⊃ p ∨ r)
 
 ------------------------------------------------------------------------
 -- Convenient aliases (used in proofs from ∗2 onward)
@@ -110,19 +110,19 @@ MP₂ hp hpq hqr = MP (MP hp hpq) hqr
 MP₃ : ⊢ p → ⊢ (p ⊃ q) → ⊢ (q ⊃ r) → ⊢ (r ⊃ s) → ⊢ s
 MP₃ hp hpq hqr hrs = MP (MP (MP hp hpq) hqr) hrs
 
-Taut : ⊢ (p ∨ p ⊃ p)
+Taut : ⊢ p ∨ p ⊃ p
 Taut = *1·2
 
-Add : ⊢ (q ⊃ p ∨ q)
+Add : ⊢ q ⊃ p ∨ q
 Add = *1·3
 
-Perm : ⊢ (p ∨ q ⊃ q ∨ p)
+Perm : ⊢ p ∨ q ⊃ q ∨ p
 Perm = *1·4
 
-Assoc : ⊢ (p ∨ (q ∨ r) ⊃ q ∨ (p ∨ r))
+Assoc : ⊢ p ∨ (q ∨ r) ⊃ q ∨ (p ∨ r)
 Assoc = *1·5
 
-Sum : ⊢ ((q ⊃ r) ⊃ (p ∨ q ⊃ p ∨ r))
+Sum : ⊢ (q ⊃ r) ⊃ (p ∨ q ⊃ p ∨ r)
 Sum = *1·6
 
 ------------------------------------------------------------------------
