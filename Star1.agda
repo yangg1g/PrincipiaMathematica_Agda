@@ -52,10 +52,8 @@ p ⊃ q = ~ p ∨ q
 private
   variable
     p q r s : Prop
-
-variable
-  A : Set
-  φ ψ : A → Prop
+    A : Set
+    φ ψ : A → Prop
 
 ------------------------------------------------------------------------
 -- (3)(4) Assertion.
