@@ -15,14 +15,14 @@ module Star1 where
 -- "some," "the" or equivalents.
 -- The letters p, q, r, s denote elementary propositions.
 
-postulate Prop : Set
+data Prop : Set where
+  _∣_ : Prop → Prop → Prop
 
 -- Sheffer stroke (NAND): p ∣ q means "not both p and q," i.e. ~(p ∧ q).
 -- This is the single primitive connective; negation and disjunction are
 -- defined (Sheffer 1913).
 
 infixl 30 _∣_
-postulate _∣_ : Prop → Prop → Prop
 
 -- (5) Negation.  ~p .=. p ∣ p
 --     (since p ∣ p .=. ~(p ∧ p) .=. ~p).
@@ -150,7 +150,7 @@ Sum = *1·6
 --  In Agda:  ∀ {x} → ⊢ (φ x)  and  ∀ {x} → ⊢ (φ x ⊃ ψ x)  imply
 --  ∀ {x} → ⊢ (ψ x)  by *1·1 at each x.
 ------------------------------------------------------------------------
-*1·11 : (∀ {x} → ⊢ (φ x))
-      → (∀ {x} → ⊢ (φ x ⊃ ψ x))
-      → (∀ {x} → ⊢ (ψ x))
-*1·11 f g = MP f g
+-- *1·11 : (∀ {x} → ⊢ (φ x))
+--       → (∀ {x} → ⊢ (φ x ⊃ ψ x))
+--       → (∀ {x} → ⊢ (ψ x))
+-- *1·11 f g = MP f g
